@@ -48,7 +48,7 @@ RCT_REMAP_METHOD(pay, payInfo:(NSString *)payInfo resolver:(RCTPromiseResolveBlo
 {
     NSString *status = resultDic[@"resultStatus"];
     if ([status integerValue] >= 8000) {
-        _resolve(@[resultDic]);
+        _resolve(@"success");
     } else {
         _reject(status, resultDic[@"memo"], [NSError errorWithDomain:resultDic[@"memo"] code:[status integerValue] userInfo:NULL]);
     }
